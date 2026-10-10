@@ -1,0 +1,21 @@
+services:
+  coturn:
+    image: coturn/coturn:latest
+    container_name: coturn
+    restart: unless-stopped
+
+    network_mode: host
+
+    env_file:
+      - .env
+
+    volumes:
+      - ./turnserver.conf:/etc/coturn/turnserver.conf:ro
+
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        exec turnserver \
+          -c /etc/coturn/turnserver.conf \
+          --realm="$$TURN_DOMAIN" \
+          --static-auth-secret="$$TURN_SECRET"
