@@ -1,0 +1,65 @@
+# =========================
+# Secrets and credentials
+# =========================
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Private keys and certificates
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+
+# Credentials and tokens
+secrets/
+credentials/
+*.secret
+*.token
+
+# =========================
+# Backups and databases
+# =========================
+backups/
+backup/
+dumps/
+*.sql
+*.sql.gz
+*.sqlite
+*.sqlite3
+*.dump
+*.tar
+*.tar.gz
+*.zip
+
+# =========================
+# Logs and temporary files
+# =========================
+*.log
+*.tmp
+*.bak
+*.swp
+*.old
+
+# =========================
+# Operating system
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Editors
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Terraform state (if used later)
+# =========================
+*.tfstate
+*.tfstate.*
+.terraform/
